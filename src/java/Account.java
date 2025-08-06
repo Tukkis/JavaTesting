@@ -18,12 +18,18 @@ public class Account {
     }
 
     public void deposit(double amount) {
+        if (amount <= 0) {
+            throw new IllegalArgumentException("Deposit amount must be positive");
+        }
         balance += amount;
     }
 
     public boolean withdraw(double amount) {
         if (amount > balance) {
             return false; // not enough balance
+        }
+        if (amount <= 0) {
+            throw new IllegalArgumentException("Withdraw amount must be positive");
         }
         balance -= amount;
         return true;
