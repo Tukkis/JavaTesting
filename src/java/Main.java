@@ -12,8 +12,8 @@ public class Main {
     public static void main(String[] args) {
         System.out.println("hello");
         try {
-            AccountService accountService = new AccountService("accounts.txt");
             LogService logService = new LogService("logs.txt");
+            AccountService accountService = new AccountService("accounts.txt", logService);
             Map<String, Account> accounts = accountService.readAccounts();
             List<Log> logs = logService.readLogs();
             for (Account acc : accounts.values()) {

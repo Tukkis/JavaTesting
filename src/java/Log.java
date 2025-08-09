@@ -4,9 +4,9 @@ package src.java;
 public class Log {
 
     private TransactionType type;
+    private double amount;
     private String accountName1; 
     private String accountName2; 
-    private double amount;
 
     public Log(TransactionType type, double amount, String accountName1, String accountName2) {
         this.type = type;
